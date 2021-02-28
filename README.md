@@ -7,9 +7,44 @@
 CRUD    | Route                                     | Description
 -------------------------------------------------------------------------------------
 Register and Login Endpoints
+-------------------------------------------------------------------------------------POST    | "api/auth/register-student"               | Registers a student user
+        |                                           | requires object: {
+        |                                           |     username: "",
+        |                                           |     firstName: "",
+        |                                           |     lastName: "",
+        |                                           |     password: ""
+        |                                           |   }
+        |                                           | Returns a user object 
 -------------------------------------------------------------------------------------
-        |                                           |
-        |                                           |
+POST    | "api/auth/register-volunteer"             | Registers a volunteer user
+        |                                           | requires object: {
+        |                                           |     username: "",
+        |                                           |     firstName: "",
+        |                                           |     lastName: "",
+        |                                           |     password: "",
+        |                                           |   }
+        |                                           | Returns a user object
+-------------------------------------------------------------------------------------
+POST    | "api/auth/register-admin"                 | Registers a admin user
+        |                                           | requires object: {
+        |                                           |     username: "",
+        |                                           |     password: ""
+        |                                           |   }
+        |                                           | Returns a user object
+-------------------------------------------------------------------------------------
+POST    | "api/auth/login"                          | Logins in a user
+        |                                           | requires object: {
+        |                                           |     username: "",
+        |                                           |     password: "",
+        |                                           |     role: (must be "student",
+        |                                           |      "volunteer", or "admin")
+        |                                           |   }
+        |                                           | Returns object: {
+        |                                           |     message: "",
+        |                                           |     token: "",
+        |                                           |     role: "",
+        |                                           |     username: ""
+        |                                           |   }
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 Student Funtionality Endpoints
