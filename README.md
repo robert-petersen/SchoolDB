@@ -31,6 +31,34 @@ Admin Functionality Endpoints
 -------------------------------------------------------------------------------------
 ```
 
+## Data Tables
+
+```
+ studentId | firstname | lastName | password | volunteerId | needMeeting
+------------------------------------------------------------------------
+      #    |    "_"    |    "_"   |    "_"   |     #     |   bool
+
+
+ volunteerId | firstname | lastName | password | subject
+----------------------------------------------------------
+      #      |    "_"    |   "_"    |    "_"   |   "_"
+
+
+ adminId | username | password
+-------------------------------
+    #    |   "_"    |    "_"
+
+
+ taskId | task
+---------------
+    #   |  "_"
+
+
+ taskPairId | taskId | studentId | completed
+---------------------------------------------
+     #      |    #   |     #     |    bool
+
+```
 
 ## ☝️ **Pitch**
 
