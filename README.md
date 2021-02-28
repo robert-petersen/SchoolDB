@@ -7,7 +7,8 @@
 CRUD    | Route                                     | Description
 -------------------------------------------------------------------------------------
 Register and Login Endpoints
--------------------------------------------------------------------------------------POST    | "api/auth/register-student"               | Registers a student user
+-------------------------------------------------------------------------------------
+POST    | "api/auth/register-student"               | Registers a student user
         |                                           | requires object: {
         |                                           |     username: "",
         |                                           |     firstName: "",
