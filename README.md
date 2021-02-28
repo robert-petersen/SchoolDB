@@ -29,7 +29,8 @@ POST    | "api/auth/register-volunteer"             | Registers a volunteer user
 POST    | "api/auth/register-admin"                 | Registers a admin user
         |                                           | requires object: {
         |                                           |     username: "",
-        |                                           |     password: ""
+        |                                           |     password: "",
+        |                                           |     adminCode: "", (on Slack)
         |                                           |   }
         |                                           | Returns a user object
 -------------------------------------------------------------------------------------
