@@ -8,6 +8,7 @@ exports.up = function(knex) {
     })
     .createTable("volunteers", tbl => {
       tbl.increments("volunteerId");
+      tbl.string("username", 128).notNullable().unique();
       tbl.string("firstName", 128).notNullable();
       tbl.string("lastName", 128).notNullable();
       tbl.string("password", 128).notNullable();
@@ -15,6 +16,7 @@ exports.up = function(knex) {
     })
     .createTable("students", tbl => {
       tbl.increments("studentId");
+      tbl.string("username", 128).notNullable().unique();
       tbl.string("firstName", 128).notNullable();
       tbl.string("lastName", 128).notNullable();
       tbl.string("password", 128).notNullable();
@@ -29,6 +31,7 @@ exports.up = function(knex) {
     .createTable("tasks", tbl => {
       tbl.increments("taskId");
       tbl.string("task", 128).notNullable().unique();
+      tbl.string("description", 128).notNullable();
     })
     .createTable("task-pairs", tbl => {
       tbl.increments("taskPairId");

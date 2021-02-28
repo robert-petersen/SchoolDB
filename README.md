@@ -34,14 +34,14 @@ Admin Functionality Endpoints
 ## Data Tables
 
 ```
- studentId | firstname | lastName | password | volunteerId | needMeeting
-------------------------------------------------------------------------
-      #    |    "_"    |    "_"   |    "_"   |     #       |   bool
+ studentId | username | firstname | lastName | password | volunteerId | needMeeting
+------------------------------------------------------------------------------------
+      #    |   "_"    |    "_"    |    "_"   |    "_"   |     #       |   bool
 
 
- volunteerId | firstname | lastName | password | subject
-----------------------------------------------------------
-      #      |    "_"    |   "_"    |    "_"   |   "_"
+ volunteerId | username | firstname | lastName | password | subject
+--------------------------------------------------------------------
+      #      |    "_"   |    "_"    |   "_"    |    "_"   |   "_"
 
 
  adminId | username | password
@@ -49,9 +49,9 @@ Admin Functionality Endpoints
     #    |   "_"    |    "_"
 
 
- taskId | task
----------------
-    #   |  "_"
+ taskId | task | description
+-----------------------------
+    #   | "_"  |     "_"
 
 
  taskPairId | taskId | studentId | completed
