@@ -36,7 +36,7 @@ Admin Functionality Endpoints
 ```
  studentId | firstname | lastName | password | volunteerId | needMeeting
 ------------------------------------------------------------------------
-      #    |    "_"    |    "_"   |    "_"   |     #     |   bool
+      #    |    "_"    |    "_"   |    "_"   |     #       |   bool
 
 
  volunteerId | firstname | lastName | password | subject
