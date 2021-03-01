@@ -54,10 +54,14 @@ router.post("/register-admin", (req, res) => {
   const credentials = req.body;
   if (credentials.adminCode === process.env.ADMIN_CODE || "developmentPlaceholder") {
     if (adminIsValid(credentials)) {
+      const admininfo = {
+        username: credentials.username,
+        password: credentials.password
+      }
       const rounds = process.env.BCRYPT_ROUNDS || 8;
-      const hash = bcryptjs.hashSync(credentials.password, rounds);
-      credentials.password = hash;
-      Admins.add(credentials)
+      const hash = bcryptjs.hashSync(admininfo.password, rounds);
+      admininfo.password = hash;
+      Admins.add(admininfo)
         .then(admin => {
           res.status(201).json({ data: admin });
         })
