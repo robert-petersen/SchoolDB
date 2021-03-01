@@ -78,7 +78,10 @@ router.post("/register-admin", (req, res) => {
 
 router.post("/login", (req, res) => {
   const role = req.body.role;
-  const loginUser = req.body;
+  const loginUser = {
+    username: req.body.username,
+    password: req.body.password
+  }
   if (isValidLogin(loginUser)) {
     if (role === "student") {
       Students.findBy({ username: loginUser.username })
