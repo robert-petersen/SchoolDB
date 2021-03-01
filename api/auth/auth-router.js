@@ -12,6 +12,10 @@ router.post("/register-student", (req, res) => {
     const rounds = process.env.BCRYPT_ROUNDS || 8;
     const hash = bcryptjs.hashSync(credentials.password, rounds);
     credentials.password = hash;
+    credentials = {
+      ...credentials,
+      needMeeting: false
+    }
     Students.add(credentials)
       .then(user => {
         res.status(201).json({ data: user });
