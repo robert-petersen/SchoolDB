@@ -23,7 +23,7 @@ exports.up = function(knex) {
       tbl
         .integer("volunteerId")
         .unsigned()
-        .references("voulnteers.volunteerId")
+        .references("volunteers.volunteerId")
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
     })
