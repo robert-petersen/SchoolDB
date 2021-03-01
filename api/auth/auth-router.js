@@ -78,50 +78,47 @@ router.post("/register-admin", (req, res) => {
 
 router.post("/login", (req, res) => {
   const role = req.body.role;
-  const loginUser = {
-    username: req.body.username,
-    password: req.body.password
-  }
+  const loginUser = req.body;
   if (isValidLogin(loginUser)) {
     if (role === "student") {
       Students.findBy({ username: loginUser.username })
-      .then(([user]) => {
-        if (user && bcryptjs.compareSync(loginUser.password, user.password)) {
-          const token = generateToken(user);
-          res.status(200).json({ message: `Welcome ${user.username}`, token, role, username });
-        } else {
-          res.status(401).json({ message: "Invalid Credentials!" });
-        }
-      })
-      .catch(error => {
-        res.status(500).json({ message: `Error logging in ${role}!`, errMessage: error.message, recived: loginUser });
-      });
+        .then(([user]) => {
+          if (user && bcryptjs.compareSync(loginUser.password, user.password)) {
+            const token = generateToken(user);
+            res.status(200).json({ message: `Welcome ${user.username}`, token, role, username });
+          } else {
+            res.status(401).json({ message: "Invalid Credentials!" });
+          }
+        })
+        .catch(error => {
+          res.status(500).json({ message: `Error logging in ${role}!`, errMessage: error.message, recived: loginUser });
+        });
     } else if (role === "volunteer") {
       Volunteers.findBy({ username: loginUser.username })
-      .then(([user]) => {
-        if (user && bcryptjs.compareSync(loginUser.password, user.password)) {
-          const token = generateToken(user);
-          res.status(200).json({ message: `Welcome ${user.username}`, token, role, username });
-        } else {
-          res.status(401).json({ message: "Invalid Credentials!" });
-        }
-      })
-      .catch(error => {
-        res.status(500).json({ message: `Error logging in ${role}!`, errMessage: error.message, recived: loginUser });
-      });
+        .then(([user]) => {
+          if (user && bcryptjs.compareSync(loginUser.password, user.password)) {
+            const token = generateToken(user);
+            res.status(200).json({ message: `Welcome ${user.username}`, token, role, username });
+          } else {
+            res.status(401).json({ message: "Invalid Credentials!" });
+          }
+        })
+        .catch(error => {
+          res.status(500).json({ message: `Error logging in ${role}!`, errMessage: error.message, recived: loginUser });
+        });
     } else if (role === "admin") {
       Admins.findBy({ username: loginUser.username })
-      .then(([user]) => {
-        if (user && bcryptjs.compareSync(loginUser.password, user.password)) {
-          const token = generateToken(user);
-          res.status(200).json({ message: `Welcome ${user.username}`, token, role, username });
-        } else {
-          res.status(401).json({ message: "Invalid Credentials!" });
-        }
-      })
-      .catch(error => {
-        res.status(500).json({ message: `Error logging in ${role}!`, errMessage: error.message, recived: loginUser });
-      });
+        .then(([user]) => {
+          if (user && bcryptjs.compareSync(loginUser.password, user.password)) {
+            const token = generateToken(user);
+            res.status(200).json({ message: `Welcome ${user.username}`, token, role, username });
+          } else {
+            res.status(401).json({ message: "Invalid Credentials!" });
+          }
+        })
+        .catch(error => {
+          res.status(500).json({ message: `Error logging in ${role}!`, errMessage: error.message, recived: loginUser });
+        });
     } else {
       res.status(400).json({ message: `Invalid role! "${role}" is not a valid role!` })
     }
