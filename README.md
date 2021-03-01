@@ -100,10 +100,10 @@ POST    | "api/admin/create-task"                   | - creates a task to be ass
         |                                           |   }
         |                                           | - returns new task object
 -------------------------------------------------------------------------------------
-DELETE  | "api/admin/delete/:studentId"             | - deletes a student user
+DELETE  | "api/admin/delete-student/:studentId"     | - deletes a student user
         |                                           | - returns success message
 -------------------------------------------------------------------------------------
-DELETE  | "api/admin/delete/:volunteerId"           | - deletes a volunteer user
+DELETE  | "api/admin/delete-volunteer/:volunteerId" | - deletes a volunteer user
         |                                           | - returns success message
 -------------------------------------------------------------------------------------
 ```

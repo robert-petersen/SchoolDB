@@ -18,7 +18,7 @@ router.post("/create-task", restricted, (req, res) => {
   }
 });
 
-router.delete("/delete/:studentId", restricted, (req, res) => {
+router.delete("/delete-student/:studentId", restricted, (req, res) => {
   Students.remove(req.params.studentId)
     .then(count => {
       if (count > 0) {
@@ -32,7 +32,7 @@ router.delete("/delete/:studentId", restricted, (req, res) => {
     });
 });
 
-router.delete("/delete/:volunteerId", restricted, (req, res) => {
+router.delete("/delete-volunteer/:volunteerId", restricted, (req, res) => {
   Volunteers.remove(req.params.studentId)
     .then(count => {
       if (count > 0) {
