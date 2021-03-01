@@ -50,63 +50,67 @@ POST    | "api/auth/login"                          | Logins in a user
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 Student Funtionality Endpoints
+------------------------------------------------------------------------------------
+GET     | "api/students/volunteers"                 | - gets all volunteers for 
+        |                                           | student to choose from.
+        |                                           | - returns array of objects
+-------------------------------------------------------------------------------------PUT     | "api/students/:studentId"                 | - used to add a volunteer id
+        |                                           | or update the needMeeting value
+        |                                           | - requires object: {
+        |                                           |     volunteerId: #,
+        |                                           |     needMeeting: bool
+        |                                           |   }
+        |                                           | - returns updated student
 -------------------------------------------------------------------------------------
-        | see volunteers available if no volunteer  |
-        |                                           |
-        |                                           |
--------------------------------------------------------------------------------------
-        | select volunteer                          |
-        |                                           |
-        |                                           |
--------------------------------------------------------------------------------------
-        | needs to see the tasks assigned to them   |
-        |                                           |
-        |                                           |
--------------------------------------------------------------------------------------
-        | set needMeeting to true or false          |
-        |                                           |
-        |                                           |
+GET     | "api/students/:studentId/tasks"           | - gets all tasks for a student
+        |                                           | - returns array of objects
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 Volunteer Functionality Endpoints
 -------------------------------------------------------------------------------------
-        | set subject                               |
-        |                                           |
-        |                                           |
+PUT     | "api/volunteers/:volunteerId/"            | - edits a volunteers subject
+        |                                           | - requires object: {
+        |                                           |     subject: ""
+        |                                           |   }
+        |                                           | - returns updated volunteer
+        |                                           | object
 -------------------------------------------------------------------------------------
-        | see all students paired to them           |
-        |                                           |
-        |                                           |
+GET     | "api/volunteers/:volunteerId"             | - gets all students paired
+        |                                           | with a volunteer
+        |                                           | - returns array of objects
 -------------------------------------------------------------------------------------
-        | see a students tasks                      |
-        |                                           |
-        |                                           |
+PUT     | "api/volunteers/:taskPairId"              | - can mark a task completed 
+        |                                           | - requires object: {
+        |                                           |     completed: bool
+        |                                           |   }
+        |                                           | - returns updated object
 -------------------------------------------------------------------------------------
-        | set a students task as complete           |
-        |                                           |
-        |                                           |
+GET     | "api/volunteers/tasks"                    | - gets all available tasks
+        |                                           | - returns array of objects
 -------------------------------------------------------------------------------------
-        | creates tasks                             |
-        |                                           |
-        |                                           |
+POST    | "api/volunteers/add-task-pair"            | - assigns task to student
+        |                                           | - requires object: {
+        |                                           |     studentId: #,
+        |                                           |     taskId: #
+        |                                           |   }
+        |                                           | - returns task pair object
 -------------------------------------------------------------------------------------
-        | assigns tasks to students                 |
-        |                                           |
-        |
+DELETE  | "api/volunteers/:taskPairId"              | - deletes a task from a student
+        |                                           | - returns success message
 -------------------------------------------------------------------------------------
 Admin Functionality Endpoints
 -------------------------------------------------------------------------------------
-        | can see all volunteers                    |
-        |     - see all volunteers students         |
-        |     - see all volunteer students tasks    |
+POST    | "api/admin/create-task"                   | - creates a task to be assigned
+        |                                           | - requires object: {
+        |                                           |     task: ""
+        |                                           |   }
+        |                                           | - returns new task object
 -------------------------------------------------------------------------------------
-        | can use volunteer endpoints to            |
-        |     - create / assign tasks               |
-        |                                           |
+DELETE  | "api/admin/delete/:studentId"             | - deletes a student user
+        |                                           | - returns success message
 -------------------------------------------------------------------------------------
-        | remove students and volunteers            |
-        |                                           |
-        |                                           |
+DELETE  | "api/admin/delete/:volunteerId"           | - deletes a volunteer user
+        |                                           | - returns success message
 -------------------------------------------------------------------------------------
 ```
 
@@ -128,9 +132,9 @@ Admin Functionality Endpoints
     #    |   "_"    |    "_"
 
 
- taskId | task | description
------------------------------
-    #   | "_"  |     "_"
+ taskId | task 
+---------------
+    #   | "_"  
 
 
  taskPairId | taskId | studentId | completed
