@@ -35,13 +35,13 @@ function findById(id) {
 }
 
 function remove(id) {
-  return db("task-pairs as t")
-    .where("t.taskPairId", id)
+  return db("task-pairs as p")
+    .where("p.taskPairId", id)
     .del();
 }
 
 function update(id, changes) {
-  return db("task-pairs as t")
-    .where("t.taskPairId", id)
+  return db("task-pairs as p")
+    .where("p.taskPairId", id)
     .update(changes, '*');
 }
