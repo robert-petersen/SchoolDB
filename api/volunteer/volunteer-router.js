@@ -93,9 +93,7 @@ function isValidBoolean(info) {
 function isValid(info) {
   return Boolean(
     info.studentId && 
-    typeof info.studentId === "integer" &&
-    info.taskId && 
-    typeof info.taskId === "integer"
+    info.taskId
   );
 }
 
