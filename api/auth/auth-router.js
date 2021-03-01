@@ -110,6 +110,7 @@ router.post("/login", (req, res) => {
       Admins.findBy({ username: loginUser.username })
         .then(([user]) => {
           if (user && bcryptjs.compareSync(loginUser.password, user.password)) {
+            
             const token = generateToken(user);
             res.status(200).json({ message: `Welcome ${user.username}`, token, role, username });
           } else {
@@ -127,9 +128,8 @@ router.post("/login", (req, res) => {
 
 function generateToken(user) {
   const payload = {
-    subject: user.id,
     username: user.username,
-    role: user.role,
+    password: user.password,
   }
   const options = {
     expiresIn: "1d",

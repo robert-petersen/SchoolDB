@@ -15,7 +15,7 @@ function find() {
 
 function findBy(filter) {
   return db("admins as a")
-    .select("a.adminId", "a.username")
+    .select("a.adminId", "a.username", "a.password")
     .where(filter);
 }
 

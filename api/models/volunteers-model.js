@@ -11,12 +11,12 @@ module.exports = {
 
 function find() {
   return db("volunteers as v")
-    .select("v.volunteerId", "v.username", "v.firstName", "v.lastName", "s.subject");
+    .select("v.volunteerId", "v.username", "v.firstName", "v.lastName");
 }
 
 function findBy(filter) {
   return db("volunteers as v")
-    .select("v.volunteerId", "v.username", "v.firstName", "v.lastName", "s.subject")
+    .select("v.volunteerId", "v.username", "v.firstName", "v.lastName", "v.password")
     .where(filter);
 }
 
