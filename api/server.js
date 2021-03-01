@@ -13,9 +13,9 @@ const volunteerRouter = require("./volunteer/volunteer-router.js");
 const adminRouter = require("./admin/admin-router.js");
 
 server.use("/api/auth", authRouter);
-// server.use("/api/students", studentRouter);
-// server.use("/api/volunteers", volunteerRouter); 
-// server.use("/api/admin", adminRouter); 
+server.use("/api/students", studentRouter);
+server.use("/api/volunteers", volunteerRouter); 
+server.use("/api/admin", adminRouter); 
 
 server.get("/", (req, res) => {
   res.send(`

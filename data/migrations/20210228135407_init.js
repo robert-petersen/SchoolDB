@@ -12,7 +12,6 @@ exports.up = function(knex) {
       tbl.string("firstName", 128).notNullable();
       tbl.string("lastName", 128).notNullable();
       tbl.string("password", 128).notNullable();
-      tbl.string("subject", 128).notNullable();
     })
     .createTable("students", tbl => {
       tbl.increments("studentId");
@@ -31,7 +30,6 @@ exports.up = function(knex) {
     .createTable("tasks", tbl => {
       tbl.increments("taskId");
       tbl.string("task", 128).notNullable().unique();
-      tbl.string("description", 128).notNullable();
     })
     .createTable("task-pairs", tbl => {
       tbl.increments("taskPairId");

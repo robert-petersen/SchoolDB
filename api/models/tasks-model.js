@@ -11,12 +11,12 @@ module.exports = {
 
 function find() {
   return db("tasks as t")
-    .select("t.taskId", "t.task", "t.description");
+    .select("t.taskId", "t.task");
 }
 
 function findBy(filter) {
   return db("tasks as t")
-    .select("t.taskId", "t.task", "t.description")
+    .select("t.taskId", "t.task")
     .where(filter);
 }
 
@@ -28,7 +28,7 @@ async function add(task) {
 
 function findById(id) {
   return db("tasks as t")
-    .select("t.taskId", "t.task", "t.description")
+    .select("t.taskId", "t.task")
     .where("t.taskId", id)
     .first();
 }

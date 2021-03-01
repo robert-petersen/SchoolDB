@@ -10,13 +10,15 @@ module.exports = {
 };
 
 function find() {
-  return db("task-pairs as t")
-    .select("t.taskPairId", "t.taskId", "t.studentId", "t.completed");
+  return db("task-pairs as p")
+    .join("tasks as t", "p.taskId", "=", "t.taskId")
+    .select("p.taskPairId", "t.task as task", "p.studentId", "p.completed")
 }
 
 function findBy(filter) {
-  return db("task-pairs as t")
-    .select("t.taskPairId", "t.taskId", "t.studentId", "t.completed")
+  return db("task-pairs as p")
+    .join("tasks as t", "p.taskId", "=", "t.taskId")
+    .select("p.taskPairId", "t.task as task", "p.studentId", "p.completed")
     .where(filter);
 }
 
@@ -26,9 +28,9 @@ async function add(taskPair) {
 }
 
 function findById(id) {
-  return db("task-pairs as t")
-    .select("t.taskPairId", "t.taskId", "t.studentId", "t.completed")
-    .where("t.taskPairId", id)
+  return db("task-pairs as p")
+    .select("p.taskPairId", "p.taskId", "p.studentId", "p.completed")
+    .where("p.taskPairId", id)
     .first();
 }
 

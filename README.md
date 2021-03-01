@@ -69,13 +69,6 @@ GET     | "api/students/:studentId/tasks"           | - gets all tasks for a stu
 -------------------------------------------------------------------------------------
 Volunteer Functionality Endpoints
 -------------------------------------------------------------------------------------
-PUT     | "api/volunteers/:volunteerId/"            | - edits a volunteers subject
-        |                                           | - requires object: {
-        |                                           |     subject: ""
-        |                                           |   }
-        |                                           | - returns updated volunteer
-        |                                           | object
--------------------------------------------------------------------------------------
 GET     | "api/volunteers/:volunteerId"             | - gets all students paired
         |                                           | with a volunteer
         |                                           | - returns array of objects
@@ -94,7 +87,7 @@ POST    | "api/volunteers/add-task-pair"            | - assigns task to student
         |                                           |     studentId: #,
         |                                           |     taskId: #
         |                                           |   }
-        |                                           | - returns task pair object
+        |                                           | - returns success message
 -------------------------------------------------------------------------------------
 DELETE  | "api/volunteers/:taskPairId"              | - deletes a task from a student
         |                                           | - returns success message
@@ -123,9 +116,9 @@ DELETE  | "api/admin/delete/:volunteerId"           | - deletes a volunteer user
       #    |   "_"    |    "_"    |    "_"   |    "_"   |     #       |   bool
 
 
- volunteerId | username | firstname | lastName | password | subject
---------------------------------------------------------------------
-      #      |    "_"   |    "_"    |   "_"    |    "_"   |   "_"
+ volunteerId | username | firstname | lastName | password 
+----------------------------------------------------------
+      #      |    "_"   |    "_"    |   "_"    |    "_"   
 
 
  adminId | username | password
