@@ -69,11 +69,11 @@ GET     | "api/students/:studentId/tasks"           | - gets all tasks for a stu
 -------------------------------------------------------------------------------------
 Volunteer Functionality Endpoints
 -------------------------------------------------------------------------------------
-GET     | "api/volunteers/:volunteerId"             | - gets all students paired
+GET     | "api/volunteers/find-students/:volunteerId"| - gets all students paired
         |                                           | with a volunteer
         |                                           | - returns array of objects
 -------------------------------------------------------------------------------------
-PUT     | "api/volunteers/:taskPairId"              | - can mark a task completed 
+PUT     | "api/volunteers/task-pairs/:taskPairId"   | - can mark a task completed 
         |                                           | - requires object: {
         |                                           |     completed: bool
         |                                           |   }
@@ -89,7 +89,7 @@ POST    | "api/volunteers/add-task-pair"            | - assigns task to student
         |                                           |   }
         |                                           | - returns success message
 -------------------------------------------------------------------------------------
-DELETE  | "api/volunteers/:taskPairId"              | - deletes a task from a student
+DELETE  | "api/volunteers/task-pairs/:taskPairId"   | - deletes a task from a student
         |                                           | - returns success message
 -------------------------------------------------------------------------------------
 Admin Functionality Endpoints

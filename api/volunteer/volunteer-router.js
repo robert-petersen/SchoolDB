@@ -4,7 +4,7 @@ const Tasks = require("../models/tasks-model.js");
 const TaskPairs = require("../models/taskPairs-model.js");
 const restricted = require("../middleware/restricted-middleware.js");
 
-router.get("/:volunteerId", restricted, (req, res) => {
+router.get("/find-students/:volunteerId", restricted, (req, res) => {
   Students.findBy({ volunteerId: req.params.volunteerId })
     .then( students => {
       res.status(200).json({ data: students });
@@ -14,7 +14,7 @@ router.get("/:volunteerId", restricted, (req, res) => {
     });
 });
 
-router.put("/:taskPairId", restricted, (req, res) => {
+router.put("/task-pairs/:taskPairId", restricted, (req, res) => {
   const body = req.body;
   if (isValidBoolean(body)) {
     TaskPairs.findById(req.params.taskPairId)
@@ -70,7 +70,7 @@ router.post("/add-task-pair", restricted, (req, res) => {
   }
 });
 
-router.delete("/:taskPairId", restricted, (req, res) => {
+router.delete("/task-pairs/:taskPairId", restricted, (req, res) => {
   TaskPairs.remove(req.params.taskPairId)
   .then(count => {
     if (count > 0) {
