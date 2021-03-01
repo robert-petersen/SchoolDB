@@ -9,14 +9,14 @@ const Admins = require("../models/admins-model.js");
 router.post("/register-student", (req, res) => {
   const credentials = req.body;
   if (isValid(credentials)) {
-    credentials = {
+    const newcredentials = {
       ...credentials,
       volunteerId: 1
     }
     const rounds = process.env.BCRYPT_ROUNDS || 8;
-    const hash = bcryptjs.hashSync(credentials.password, rounds);
-    credentials.password = hash;
-    Students.add(credentials)
+    const hash = bcryptjs.hashSync(newcredentials.password, rounds);
+    newcredentials.password = hash;
+    Students.add(newcredentials)
       .then(user => {
         res.status(201).json({ data: user });
       })
