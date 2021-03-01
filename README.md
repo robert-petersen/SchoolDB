@@ -54,7 +54,8 @@ Student Funtionality Endpoints
 GET     | "api/students/volunteers"                 | - gets all volunteers for 
         |                                           | student to choose from.
         |                                           | - returns array of objects
--------------------------------------------------------------------------------------PUT     | "api/students/:studentId"                 | - used to add a volunteer id
+-------------------------------------------------------------------------------------
+PUT     | "api/students/:studentId"                 | - used to add a volunteer id
         |                                           | or update the needMeeting value
         |                                           | - requires object: {
         |                                           |     volunteerId: #,
