@@ -19,7 +19,7 @@ exports.up = function(knex) {
       tbl.string("firstName", 128).notNullable();
       tbl.string("lastName", 128).notNullable();
       tbl.string("password", 128).notNullable();
-      tbl.boolean("needMeeting").notNullable();
+      tbl.boolean("needMeeting").defaultTo(false);
       tbl
         .integer("volunteerId")
         .unsigned()

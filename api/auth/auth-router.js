@@ -11,7 +11,6 @@ router.post("/register-student", (req, res) => {
   if (isValid(credentials)) {
     credentials = {
       ...credentials,
-      needMeeting: false,
       volunteerId: 1
     }
     const rounds = process.env.BCRYPT_ROUNDS || 8;
