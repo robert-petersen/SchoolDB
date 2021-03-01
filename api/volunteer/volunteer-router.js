@@ -86,8 +86,7 @@ router.delete("/:taskPairId", restricted, (req, res) => {
 
 function isValidBoolean(info) {
   return Boolean(
-    info.completed && 
-    typeof info.completed === "boolean"
+    info.completed
   );
 }
 

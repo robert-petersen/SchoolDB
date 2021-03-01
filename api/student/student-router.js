@@ -55,10 +55,8 @@ router.get("/:studentId/tasks", restricted, (req, res) => {
 
 function isValid(student) {
   return Boolean(
-    student.volunteerId && 
-    typeof student.volunteerId === "integer" && 
-    student.needMeeting && 
-    typeof student.needMeeting === "boolean"
+    student.volunteerId &&
+    student.needMeeting
   );
 }
 
