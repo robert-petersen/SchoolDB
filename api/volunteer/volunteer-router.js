@@ -25,7 +25,7 @@ router.put("/task-pairs/:taskPairId", restricted, (req, res) => {
           studentId: pair.studentId,
           taskId: pair.taskId
         }
-        TaskPairs.update(req.params.studentId, updated)
+        TaskPairs.update(req.params.taskPairId, updated)
           .then( pair => {
             res.status(201).json({ data: pair });
           })
