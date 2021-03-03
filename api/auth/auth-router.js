@@ -88,7 +88,7 @@ router.post("/login", (req, res) => {
         .then(([user]) => {
           if (user && bcryptjs.compareSync(loginUser.password, user.password)) {
             const token = generateToken(user);
-            res.status(200).json({ message: `Welcome ${user.username}`, token: token, role: role, username: loginUser.username });
+            res.status(200).json({ message: `Welcome ${user.username}`, token: token, role: role, studentId: user.studentId });
           } else {
             res.status(401).json({ message: "Invalid Credentials!" });
           }
@@ -101,7 +101,7 @@ router.post("/login", (req, res) => {
         .then(([user]) => {
           if (user && bcryptjs.compareSync(loginUser.password, user.password)) {
             const token = generateToken(user);
-            res.status(200).json({ message: `Welcome ${user.username}`, token: token, role: role, username: loginUser.username });
+            res.status(200).json({ message: `Welcome ${user.username}`, token: token, role: role, volunteerId: user.volunteerId });
           } else {
             res.status(401).json({ message: "Invalid Credentials!" });
           }
