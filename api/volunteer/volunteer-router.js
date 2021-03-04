@@ -92,8 +92,7 @@ function isValidBoolean(info) {
 
 function isValid(info) {
   return Boolean(
-    info.studentId && 
-    info.taskId
+    info.studentId
   );
 }
 
