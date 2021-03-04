@@ -28,7 +28,7 @@ async function add(volunteer) {
 
 function findById(id) {
   return db("volunteers as v")
-    .select("v.volunteerId", "v.username", "v.firstName", "v.lastName", "s.subject")
+    .select("v.volunteerId", "v.username", "v.firstName", "v.lastName")
     .where("v.volunteerId", id)
     .first();
 }
