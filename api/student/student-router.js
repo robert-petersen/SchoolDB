@@ -24,7 +24,7 @@ router.get("/:studentId", (req, res) => {
     });
 });
 
-router.get("/:volunteerId", (req, res) => {
+router.get("/volunteers/:volunteerId", (req, res) => {
   Volunteers.findById(req.params.volunteerId)
     .then( volunteer => {
       res.status(200).json({ data: volunteer });

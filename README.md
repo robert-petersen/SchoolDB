@@ -59,7 +59,7 @@ GET     | "api/students/:studentId"                 | - gets a student object ba
         |                                           | on a studentId.
         |                                           | - returns array of objects
 -------------------------------------------------------------------------------------
-GET     | "api/students/:volunteerId"               | - gets a volunteer object  
+GET     | "api/students/volunteers/:volunteerId"    | - gets a volunteer object  
         |                                           | based on a volunteerId.
         |                                           | - returns array of objects
 -------------------------------------------------------------------------------------
