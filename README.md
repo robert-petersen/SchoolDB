@@ -71,7 +71,7 @@ PUT     | "api/students/:studentId"                 | - used to add a volunteer 
         |                                           |   }
         |                                           | - returns updated student
 -------------------------------------------------------------------------------------
-GET     | "api/students/:studentId/tasks"           | - gets all tasks for a student
+GET     | "api/students/:volunteerId/tasks"         | - gets all tasks for a student
         |                                           | - returns array of objects
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -92,7 +92,7 @@ GET     | "api/volunteers/tasks"                    | - gets all available tasks
 -------------------------------------------------------------------------------------
 POST    | "api/volunteers/add-task-pair"            | - assigns task to student
         |                                           | - requires object: {
-        |                                           |     studentId: #,
+        |                                           |     volunteerId: #,
         |                                           |     taskId: #
         |                                           |   }
         |                                           | - returns success message
