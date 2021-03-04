@@ -75,7 +75,6 @@ router.get("/:volunteerId/tasks", restricted, (req, res) => {
 
 function isValid(student) {
   return Boolean(
-    student.volunteerId &&
     student.needMeeting
   );
 }
