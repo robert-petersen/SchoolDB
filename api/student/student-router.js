@@ -14,6 +14,26 @@ router.get("/volunteers", restricted, (req, res) => {
     });
 });
 
+router.get("/:studentId", (req, res) => {
+  Students.findById(req.params.studentId)
+    .then( student => {
+      res.status(200).json({ data: student });
+    })
+    .catch( err => {
+      res.status(500).json({ message: "Error retrieving student", errMessage: err.message });
+    });
+});
+
+router.get("/:volunteerId", (req, res) => {
+  Volunteers.findById(req.params.volunteerId)
+    .then( volunteer => {
+      res.status(200).json({ data: volunteer });
+    })
+    .catch( err => {
+      res.status(500).json({ message: "Error retrieving volunteer", errMessage: err.message });
+    });
+});
+
 router.put("/:studentId", restricted, (req, res) => {
   const body = req.body;
   if (isValid(body)) {
