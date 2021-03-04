@@ -36,7 +36,7 @@ router.get("/volunteers/:volunteerId", (req, res) => {
 
 router.put("/:studentId", restricted, (req, res) => {
   const body = req.body;
-  if (isValid(body)) {
+  // if (isValid(body)) {
     Students.findById(req.params.studentId)
       .then( student => {
         const updated = {
@@ -58,9 +58,9 @@ router.put("/:studentId", restricted, (req, res) => {
       .catch( err => {
         res.status(500).json({ message: "Error retrieving student!", errMessage: err.message });
       });
-  } else {
-    res.status(400).json({ message: "Please provide volunteerId (#) and needMeeting (boolean)!", recived: body });
-  }
+  // } else {
+  //   res.status(400).json({ message: "Please provide volunteerId (#) and needMeeting (boolean)!", recived: body });
+  // }
 });
 
 router.get("/:volunteerId/tasks", restricted, (req, res) => {
