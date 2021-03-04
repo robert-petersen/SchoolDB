@@ -34,9 +34,9 @@ exports.up = function(knex) {
     .createTable("task-pairs", tbl => {
       tbl.increments("taskPairId");
       tbl
-        .integer("studentId")
+        .integer("volunteerId")
         .unsigned()
-        .references("students.studentId")
+        .references("volunteers.volunteerId")
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
       tbl
