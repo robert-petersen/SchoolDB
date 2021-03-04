@@ -63,8 +63,8 @@ router.put("/:studentId", restricted, (req, res) => {
   }
 });
 
-router.get("/:studentId/tasks", restricted, (req, res) => {
-  TaskPairs.findBy({ studentId: req.params.studentId })
+router.get("/:volunteerId/tasks", restricted, (req, res) => {
+  TaskPairs.findBy({ volunteerId: req.params.volunteerId })
     .then( tasks => {
       res.status(200).json({ data: tasks });
     })
