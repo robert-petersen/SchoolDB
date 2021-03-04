@@ -59,7 +59,7 @@ router.put("/:studentId", restricted, (req, res) => {
         res.status(500).json({ message: "Error retrieving student!", errMessage: err.message });
       });
   } else {
-    res.status(400).json({ message: "Please provide volunteerId (#) and needMeeting (boolean)!" });
+    res.status(400).json({ message: "Please provide volunteerId (#) and needMeeting (boolean)!", recived: body });
   }
 });
 
